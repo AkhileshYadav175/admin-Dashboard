@@ -280,3 +280,19 @@ input[type="checkbox"] {
   justify-content: flex-end;
   gap: 10px;
 }
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  min-width: 700px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .users-top {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

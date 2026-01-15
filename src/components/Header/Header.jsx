@@ -1,7 +1,12 @@
 import "./Header.css";
 
-const Header = () => (
+const Header = ({ onMenuClick }) => (
   <header className="admin-header">
+    {/* Mobile menu button */}
+    <button className="menu-btn" onClick={onMenuClick}>
+      ☰
+    </button>
+
     <h3>Admin Panel</h3>
 
     <div className="header-right">
