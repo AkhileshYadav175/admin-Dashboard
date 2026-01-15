@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .admin-header h2 {
+    font-size: 16px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}

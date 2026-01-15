@@ -1,0 +1,158 @@
+.settings-container {
+  padding: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 30px;
+}
+
+.settings-header h2 {
+  font-size: 24px;
+  color: var(--text-main);
+  margin-bottom: 5px;
+}
+
+.settings-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* TABS LAYOUT */
+.settings-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.settings-tabs {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid var(--border);
+}
+
+.settings-tabs button {
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  text-align: left;
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.settings-tabs button:hover {
+  background: var(--bg-app);
+}
+
+.settings-tabs button.active {
+  background: #129357;
+  color: white;
+}
+
+/* CONTENT CARD */
+.settings-card {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.settings-card h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: var(--text-main);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.settings-card label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.settings-card input, 
+.settings-card select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-app);
+  color: var(--text-main);
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.settings-card input:focus {
+  outline: none;
+  border-color: #129357;
+}
+
+.checkbox-label {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.checkbox-label input {
+  width: auto;
+}
+
+/* BUTTONS */
+.btn-save {
+  background: #129357;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.danger-zone {
+  border: 1px solid #fee2e2;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+  .settings-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

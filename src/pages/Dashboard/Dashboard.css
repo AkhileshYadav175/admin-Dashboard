@@ -1,0 +1,205 @@
+/* --- CSS VARIABLES & THEME SYSTEM --- */
+:root {
+  /* Light Theme Colors */
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --accent: #f59e0b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  
+}
+
+.dashboard.dark {
+  /* Dark Theme Colors */
+  --bg-app: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --primary: #6366f1;
+  --border: #334155;
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+}
+
+/* --- BASE STYLES --- */
+.dashboard {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background 0.3s ease;
+}
+
+/* --- HEADER --- */
+.dashboard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-top h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.dashboard-top p {
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* --- CONTROLS (Dates & Buttons) --- */
+.date-filter {
+  background: var(--bg-card);
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow);
+}
+
+.date-filter input {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.theme-toggle-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* --- KPI CARDS --- */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.stat-card span {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-card h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+}
+
+/* --- CHARTS & BOXES --- */
+.chart-box, .dashboard-box {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Active/Metric Buttons */
+.chart-actions button, .metric-toggle button {
+  background: var(--bg-app);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+}
+
+.chart-actions button.active, .metric-toggle button.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* --- PROGRESS BAR --- */
+.progress-container {
+  margin: 1.5rem 0;
+}
+
+.progress-bar {
+  height: 12px;
+  background: var(--bg-app);
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+  border-radius: 100px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- UTILITIES --- */
+.up { color: var(--success) !important; font-weight: 600; }
+.down { color: var(--danger) !important; font-weight: 600; }
+
+.tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  color: var(--text-main);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .dashboard { padding: 1rem; }
+  .dashboard-top { flex-direction: column; align-items: flex-start; }
+  .top-actions { width: 100%; flex-direction: column; }
+  .date-filter { width: 100%; justify-content: space-between; }
+}

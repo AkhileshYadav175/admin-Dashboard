@@ -1,0 +1,45 @@
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #129357; /* green */
+  color: #ffffff;
+  padding: 20px;
+}
+
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu a {
+  color: #e9f7ef;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Active (future ready) */
+.menu a.active {
+  background: #ffffff;
+  color: #129357;
+  font-weight: 500;
+}
